@@ -1,0 +1,9 @@
+﻿@model WesternPlains.App.ViewModels.RegistrationSuccessViewModel
+@{
+    ViewData["Title"] = "User Registered!";
+}
+
+<h2>User registered!</h2>
+
+<a class="ui green button" href="@Model.AdminPanelUrl">Return to Dashboard</a>
+<a class="ui blue button" href="@Model.RegistrationUrl">Return to registration</a>

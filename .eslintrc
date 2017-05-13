@@ -1,0 +1,43 @@
+{
+  "root": true,
+  "env": {
+    "shared-node-browser": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "comma-dangle": ["error", "always-multiline"],
+    "camelcase": "error",
+    "eol-last": ["error", "always"],
+    "indent": ["error", 2],
+    "line-comment-position": ["error", { "position": "above" }],
+    "new-parens": "error",
+    "newline-before-return": "error",
+    "newline-per-chained-call": "error",
+    "no-array-constructor": "error",
+    "no-bitwise": "error",
+    "no-continue": "error",
+    "no-lonely-if": "error",
+    "no-mixed-operators": "error",
+    "no-nested-ternary": "error",
+    "no-new-object": "error",
+    "no-tabs": "error",
+    "no-trailing-spaces": "error",
+    "no-underscore-dangle": "error",
+    "no-unneeded-ternary": "error",
+    "no-whitespace-before-property": "error",
+    "no-duplicate-imports": "error",
+    "no-var": "error",
+    "nonblock-statement-body-position": ["error", "below"],
+    "object-shorthand": "error",
+    "prefer-const": "error",
+    "prefer-rest-params": "error",
+    "prefer-spread": "error",
+    "prefer-template": "error",
+    "quotes": ["error", "single"],
+    "semi": "error"
+  }
+}

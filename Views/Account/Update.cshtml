@@ -1,0 +1,56 @@
+﻿@model WesternPlains.App.ViewModels.UpdateUserViewModel
+@{
+    ViewData["Title"] = "Update User";
+}
+
+<h2>Reset Password</h2>
+<form class="ui form" id="reset-password" asp-controller="Account" asp-action="ResetPassword">
+    <input type="hidden" asp-for="Id" />
+    <div class="field">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" />
+    </div>
+    <input class="ui green button" type="submit" value="Reset" />
+</form>
+
+<br />
+@if (Model.IsRevoked)
+{
+<form asp-controller="Account" asp-action="Restore">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" class="ui orange button" value="Click to restore account" />
+</form>
+}
+else
+{
+<form asp-controller="Account" asp-action="Revoke">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" class="ui orange button" value="Click to revoke account" />
+</form>
+}
+
+<h2>Update Information</h2>
+<form class="ui form" id="update-user" asp-controller="Account" asp-action="Update">
+    <input type="hidden" asp-for="Id" />
+    <div class="field">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" />
+    </div>
+    <div class="field">
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" />
+    </div>
+    <div class="field">
+        <label asp-for="Username"></label>
+        <input asp-for="Username" />
+    </div>
+    <div class="field">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+    </div>
+    <div class="field">
+        <label asp-for="Role"></label>
+        <select asp-for="Role" asp-items="@Model.Roles"></select>
+    </div>
+    <input class="ui primary button" type="submit" value="Update" />
+</form>

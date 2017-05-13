@@ -1,0 +1,9 @@
+﻿@model WesternPlains.App.ViewModels.UpdateSuccessViewModel
+@{
+    ViewData["Title"] = "Update Success";
+}
+
+<h2>@Model.Fullname account has been updated</h2>
+
+<a class="ui green button" href="@Model.DashboardUrl">Return to Dashboard</a>
+<a class="ui blue button" href="@Model.UpdateUrl">Update @Model.Fullname</a>

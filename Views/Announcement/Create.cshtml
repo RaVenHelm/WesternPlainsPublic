@@ -1,0 +1,25 @@
+﻿@model WesternPlains.App.ViewModels.AnnoucementCreateViewModel
+@{ 
+    ViewData["Title"] = "Add Announcement";
+}
+
+<form asp-controller="Announcement" asp-action="Create" method="post" class="ui form" id="create-announcement">
+    <h2>Add Announcement</h2>
+    <div asp-validation-summary="All"></div>
+    <div class="field">
+        <label asp-for="Category">Category</label>
+        <input type="text" asp-for="Category" id="category-text" />
+    </div>
+    <div class="field">
+        <label for="editor">Text</label>
+        <div id="editor"></div>
+    </div>
+    <input type="hidden" asp-for="Text" id="announcement-text" />
+    <input type="submit" value="Submit" class="ui primary button" />
+    <div class="ui error message"></div>
+</form>
+
+@section scripts {
+<script src="~/js/vendor.js"></script>
+<script src="~/js/createAnnouncement.js"></script>
+}

@@ -1,0 +1,55 @@
+﻿@model WesternPlains.App.ViewModels.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Add User";
+}
+
+<div id="add-user">
+    <form id="add-user-form" asp-controller="Account" asp-action="Register" class="ui form">
+        <h4>Add User</h4>
+        <hr />
+        <div asp-validation-summary="All"></div>
+        <div class="field">
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName" />
+            <span asp-validation-for="FirstName" class="ui red"></span>
+        </div>
+        <div class="field">
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName" />
+            <span asp-validation-for="LastName" class="ui red"></span>
+        </div>
+        <div class="field">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" />
+            <span asp-validation-for="Email" class="ui red"></span>
+        </div>
+        <div class="field">
+            <label asp-for="Username">Username</label>
+            <input asp-for="Username" />
+            <span asp-validation-for="Username" class="ui red"></span>
+        </div>
+        <div class="field">
+            <label asp-for="Password">Password</label>
+            <input asp-for="Password" />
+            <span asp-validation-for="Password" class="ui red"></span>
+        </div>
+        <div class="field">
+            <label asp-for="PasswordConfirmation"></label>
+            <input asp-for="PasswordConfirmation" />
+            <span asp-validation-for="PasswordConfirmation" class="ui red"></span>
+        </div>
+        <div class="field">
+            <label asp-for="Role">Role</label>
+            <select asp-for="Role" asp-items="Model.Roles">
+            </select>
+        </div>
+        <input class="ui primary button" type="submit" value="Add User" />
+        <div class="ui error message"></div>
+    </form>
+</div>
+
+@section scripts {
+<script src="~/js/vendor.js"></script>
+<script src="~/js/register.js"></script>
+}

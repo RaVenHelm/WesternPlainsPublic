@@ -1,0 +1,24 @@
+﻿@model WesternPlains.App.ViewModels.ReportViewModel
+@{
+    ViewData["Title"] = "Reports";
+}
+
+<div class="report-area">
+    <label for="users">Users</label>
+    <select id="users" asp-items="Model.Users"></select>
+    <table class="ui celled padded table" id="report-table">
+        <thead>
+            <tr>
+                <th class="single line">User</th>
+                <th>Action</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+@section scripts {
+<script src="~/js/vendor.js"></script>
+<script src="~/js/reports.js"></script>
+}

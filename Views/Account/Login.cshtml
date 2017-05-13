@@ -1,0 +1,30 @@
+﻿@using WesternPlains.App.ViewModels
+@model LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+<div>
+    <form asp-controller="Account" asp-action="Login" id="login" class="ui form" method="POST">
+        <h2>Login</h2>
+        <hr />
+        <div class="field">
+            <label asp-for="Username">Username</label>
+            <input asp-for="Username" />
+            <span asp-validation-for="Username" class="ui red"></span>
+        </div>
+        <div class="field">
+            <label asp-for="Password">Password</label>
+            <input asp-for="Password" />
+            <span asp-validation-for="Password" class="ui red"></span>
+        </div>
+        <input class="ui primary button" type="submit" value="Login" />
+        <div asp-validation-summary="All"></div>
+        <div class="ui error message"></div>
+    </form>
+</div>
+
+@section scripts
+{
+<script src="~/js/vendor.js"></script>
+<script src="~/js/login.js"></script>
+}

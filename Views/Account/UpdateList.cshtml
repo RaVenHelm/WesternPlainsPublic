@@ -1,0 +1,18 @@
+﻿@model WesternPlains.App.ViewModels.UpdateUserListViewModel
+@{
+    ViewData["Title"] = "Update User";
+}
+
+<style>
+    .user-item {
+        margin: 1em 0;
+    }
+</style>
+<div class="user-list">
+    @foreach (var link in Model.Links)
+    {
+        <div class="user-item">
+            <a class="ui primary button" href="@link.Link">@link.User.FullName</a>
+        </div>
+    }
+</div>

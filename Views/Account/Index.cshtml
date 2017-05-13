@@ -1,0 +1,69 @@
+﻿@using WesternPlains.App.ViewModels
+@model AdminPanelViewModel
+@{
+    ViewData["Title"] = "Administration";
+}
+
+<h1 class="ui header">Dashboard</h1>
+<div id="admin-panel" class="ui four column grid">
+    <div class="row">
+        <h2>Quick Links</h2>
+    </div>
+    <div class="row quicklinks">
+        <div class="column">
+            <admin-link controller="Account" action="ResetPassword">Reset Password</admin-link>
+        </div>
+    </div>
+    <div class="row">
+        <h2>Applications</h2>
+    </div>
+    <div class="row">
+        @if (Model.CanOpenAVM)
+        {
+            <div class="column">
+                <admin-link controller="Application" action="Avm" new-tab="true">AVM2000</admin-link>
+            </div>
+        }
+        @if (Model.CanOpenTrello)
+        {
+            <div class="column">
+                <admin-link controller="Application" action="Trello" new-tab="true">Trello</admin-link>
+            </div>
+        }
+        @if (Model.CanOpenGSuite)
+        {
+            <div class="column">
+                <admin-link controller="Application" action="Google" new-tab="true">GSuite</admin-link>
+            </div>
+        }
+    </div>
+    <div class="row">
+        <h2>Administration</h2>
+    </div>
+    <div class="row">
+        @if (Model.CanCreateUser)
+        {
+            <div class="column">
+                <admin-link controller="Account" action="Register">Add User</admin-link>
+            </div>
+        }
+        @if (Model.CanCreateAnnouncement)
+        {
+            <div class="column">
+                <admin-link controller="Announcement" action="Create">Add Announcement</admin-link>
+            </div>
+        }
+        @if (Model.CanUpdateUser)
+        {
+            <div class="column">
+                <admin-link controller="Account" action="Update">Update a User</admin-link>
+            </div>
+        }
+        @if (Model.CanGenerateReports)
+        {
+            <div class="column">
+                <admin-link controller="Report" action="Index">Generate Reports</admin-link>
+            </div>
+        }
+    </div>
+</div>
